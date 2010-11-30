@@ -84,6 +84,14 @@
     <owl:disjointWith rdf:resource="#SocialPerson"/>
   </owl:Class>
 
+  <owl:Class rdf:about="#Entity">
+    <rdfs:label xml:lang="en">(Datatype http://www.w3.org/2001/XMLSchema#string) : entity</rdfs:label>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.ifomis.org/bfo/snap#Continuant"/>
+      <rdf:Description rdf:about="http://www.ifomis.org/bfo/span#Occurrent"/>
+    </owl:unionOf>
+  </owl:Class>
+
   <owl:Class rdf:about="#FinestPart">
     <rdfs:subClassOf rdf:resource="#CommonKnowledgePartitionPart"/>
     <owl:disjointWith rdf:resource="#NonFinestPart"/>
@@ -94,14 +102,6 @@
     <owl:disjointWith rdf:resource="#NonFinestPart"/>
     <owl:equivalentClass rdf:resource="#Body"/>
     <owl:equivalentClass rdf:resource="#FinestPart"/>
-  </owl:Class>
-
-  <owl:Class rdf:about="#Information">
-    <rdfs:label xml:lang="en">(Datatype http://www.w3.org/2001/XMLSchema#string) : information</rdfs:label>
-    <owl:unionOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.ifomis.org/bfo/snap#Continuant"/>
-      <rdf:Description rdf:about="http://www.ifomis.org/bfo/span#Occurrent"/>
-    </owl:unionOf>
   </owl:Class>
 
   <owl:Class rdf:about="#NonFinestPart">
@@ -178,7 +178,7 @@
     <rdfs:comment rdf:datatype="&xsd;string">Examples: a heart, a person, the color of a tomato, the mass of a cloud, a symphony orchestra, the disposition of blood to coagulate, the lawn and atmosphere in front of our building</rdfs:comment>
     <rdfs:comment rdf:datatype="&xsd;string">Synonyms: endurant</rdfs:comment>
     <rdfs:label rdf:datatype="&xsd;string">continuant</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Information"/>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
     <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/span#Occurrent"/>
     <owl:unionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="http://www.ifomis.org/bfo/snap#DependentContinuant"/>
@@ -459,7 +459,7 @@
     <rdfs:comment rdf:datatype="&xsd;string">Examples: the life of an organism, a surgical operation as processual context for a nosocomical infection, the spatiotemporal context occupied by a process of cellular meiosis, the most interesting part of Van Gogh's life, the spatiotemporal region occupied by the development of a cancer tumor</rdfs:comment>
     <rdfs:comment rdf:datatype="&xsd;string">Synonyms: perdurant</rdfs:comment>
     <rdfs:label rdf:datatype="&xsd;string">occurrent</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Information"/>
+    <rdfs:subClassOf rdf:resource="#Entity"/>
     <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/snap#Continuant"/>
     <owl:unionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="http://www.ifomis.org/bfo/span#ProcessualEntity"/>
